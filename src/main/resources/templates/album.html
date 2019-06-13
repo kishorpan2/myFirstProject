@@ -1,0 +1,17 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Hello! Here are the Songs </title>
+</head>
+<body>
+<h1>All the Songs</h1>
+<ul>
+    <li th:each="song : ${album}">
+        <span th:text="${song.title}"></span>
+        <span th:text="${song.artist}"></span>
+        <span th:text="${song.songCount}"></span>
+        <span th:text="${song.length}"></span>
+        <span th:text="${song.imageUrl}"></span>
+    </li>
+</ul>
+</body>
+</html>
