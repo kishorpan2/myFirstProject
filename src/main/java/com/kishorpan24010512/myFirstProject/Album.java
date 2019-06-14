@@ -1,19 +1,24 @@
 package com.kishorpan24010512.myFirstProject;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
+
 @Entity
+
+
 public class Album {
 
     @Id
-    @GeneratedValue()
-    long id;
-    String title;
-    String artist;
-    int songCount;
-    double length;
-    String imageUrl;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    public long id;
+    public String title;
+    public String artist;
+    public int songCount;
+    public double length;
+    public String imageUrl;
+
+    @OneToMany(mappedBy ="album")
+    public List<Song>songs;
 
    public Album(){}
 
