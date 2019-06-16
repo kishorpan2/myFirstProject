@@ -3,23 +3,24 @@
     <title>Hello! Here are the Songs </title>
 </head>
 <body>
-<h1> Songs</h1>
+<h1> Songs Album</h1>
 <ul>
-    <li th:each="song : ${album}">
-        <span th:text="${song.title}"></span>
-        <span th:text="${song.artist}"></span>
-        <span th:text="${song.songCount}"></span>
-        <span th:text="${song.length}"></span>
-        <span th:text="${song.imageUrl}"></span>
+    <li th:each="albums : ${album}">
+        <img th:src="${albums.imageUrl}" style="width: 160px;"><br />
+        <p> Album Title: <span th:text="${albums.title}"></span></p>
+        <p> Album Artist: <span th:text="${albums.artist}"></span></p>
+        <p>Song Count: <span th:text="${albums.songCount}"></span></p>
+        <p> Duration: <span th:text="${albums.length}"></span></p><hr>
+
     </li>
 </ul>
 
 <form method="POST" action="/album">
-    <label for="title"> Album Title</label><input name="title" id="title" />
-    <label for="artist"> Artist</label><input name="artist" id="artist" />
-    <label for="songCount"> song count</label><input name="songCount" id="songCount" />
-    <label for="length"> length</label><input name="length" id="length" />
-    <label for="imageUrl"> ImageUrl</label><input name="imageUrl" id="imageUrl" />
+    <label for="title"> Album Title</label><input name="title" id="title" /> <br />
+    <label for="artist"> Artist</label><input name="artist" id="artist" /> <br />
+    <label for="songCount"> song count</label><input name="songCount" id="songCount" /> <br />
+    <label for="length"> length</label><input name="length" id="length" /> <br />
+    <label for="imageUrl"> ImageUrl</label><input name="imageUrl" id="imageUrl" /><br />
     <input type="submit" />
 
 </form>
