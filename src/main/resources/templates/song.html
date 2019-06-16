@@ -1,0 +1,36 @@
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Songs </title>
+</head>
+<body>
+<h1> Songs</h1>
+<ul>
+    <li th:each="songs : ${song}">
+
+        <p> Song Title: <span th:text="${songs.title}"></span></p>
+        <p> Length: <span th:text="${songs.length}"></span></p>
+        <p> Track Number: <span th:text="${songs.trackNumber}"></span></p>
+        <p> Album: <span th:text="${songs.album.title}"></span>
+            <!--<img th: src="${song.albums.imageUrl}" style="width:160px" />-->
+        </p>
+        <hr>
+
+
+    </li>
+
+
+</ul>
+
+<form method="POST" action="/song">
+    Song Title<input type="text" name="title" /> <br />
+    Length <input type="text" name="length" /> <br />
+    Track Number<input type="text" name="trackNumber" /> <br />
+    Album<input type="text" name="album" >
+    <input type="submit" />
+
+</form>
+</body>
+
+
+
+</html>
